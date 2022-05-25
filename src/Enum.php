@@ -168,8 +168,9 @@ abstract class Enum implements Enumerable, JsonSerializable
 
         return false;
     }
-
-    public function jsonSerialize(): string
+    
+    #[\ReturnTypeWillChange]
+    public function jsonSerialize()
     {
         return $this->getValue();
     }
