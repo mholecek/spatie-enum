@@ -338,10 +338,6 @@ abstract class Enum implements Enumerable, JsonSerializable
 
     protected function resolveByStaticCall(): array
     {
-        if (strpos(static::class, 'class@anonymous') !== 0) {
-            throw new InvalidValueException(null, static::class);
-        }
-
         $backtrace = debug_backtrace();
 
         $name = $backtrace[2]['function'];
